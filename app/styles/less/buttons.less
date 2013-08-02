@@ -1,0 +1,39 @@
+/*  B U T T O N S  */
+
+.btn {
+	display : inline-block;
+	*display : inline;
+	/* IE7 inline-block hack */
+	*zoom : 1;
+	margin-bottom : 0;
+
+	font-family : @basefont;
+	line-height : @baselineheight;
+	color : @buttoncolor;
+	text-align : center;
+	vertical-align : middle;
+	background-color : @buttonbackground;
+	border : @buttonbordercolor;
+	.rounded(4px);
+	cursor : pointer;
+	*margin-left : .3em;
+	padding: .328em 1.618em;
+	margin: .531em 0 .86em;
+
+	.transition(background-color .3s);
+
+	&:hover,
+	&:visited {
+		color: @buttoncolor;
+		text-decoration: none;
+	}
+
+	&:hover { background : lighten(@buttonbackground, 3%); }
+	&:active { background: darken(@buttonbackground, 3%); }
+}
+
+input[type="submit"].btn:hover {
+border-color : @buttonbordercolor; }
+
+.btn:first-child {
+*margin-left : 0; }

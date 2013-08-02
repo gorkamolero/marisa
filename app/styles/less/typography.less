@@ -1,0 +1,234 @@
+/* 	T Y P O G R A P H Y  */
+
+// HEADINGS ====================================================
+
+h1, 
+h2, 
+h3, 
+h4, 
+h5, 
+h6 {
+margin : 0;
+font-family : @baseheadingfont;
+font-weight : @baseheadingfontweight;
+color : @baseheadingfontcolor;
+text-rendering : optimizeLegibility; }
+
+h1 {
+	font-size: 2.25em;
+	line-height: 1em;
+	margin-top: .618em;
+	margin-bottom: .382em;	
+   	font-style: normal;
+   	font-weight: 700;
+   	text-transform: uppercase;
+
+
+   	header[role="banner"] & { margin-bottom: .236em; }
+
+   	article.post & { 
+   		font-weight: 800; 
+   		margin-top: .236em;
+
+   		@media screen and (min-width: 1024px) {
+   			letter-spacing: 1px;
+   			margin-top: .531em;
+   			margin-bottom: .618em;
+   		}
+   	}
+
+
+}
+
+h2 {
+	font-size: 2em;
+	line-height: 1.2em;
+	margin-bottom: 1.618em;
+	margin-top: 1em;
+	letter-spacing: 1px;
+	font-style: normal;
+	font-weight: 800;
+	text-transform: uppercase;
+	
+	section.contact & { margin-bottom: 1em; }
+	&:first-child { margin-top: 0; }
+
+	@media screen and (min-width: 1024px) {
+		margin-top: 1.618em;
+		margin-bottom: .86em;
+
+		&:first-child { margin-top: .203em; }
+	}
+}
+
+h3 {
+	font-size: 1.375em;
+	font-weight: 500;
+	line-height: 1.1761363636363635em;
+	text-transform: uppercase;
+
+	margin-bottom: .531em;
+
+	section.contact & { margin-bottom: 0; }
+//	margin-bottom: 0.7272727272727273em;
+}
+
+h4 {
+	font-size: 1.1875em;
+	font-weight: 300;
+	font-style: italic;
+
+	article.more & { 
+		margin-bottom: .382em;
+		margin-top: .618em;
+		font-size: 1.391em;
+		font-weight: 400;
+ 	}
+}
+
+h5, .h5 {
+	font-size: 1em;
+	font-weight: 500;
+	line-height: 1.618em;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+
+	footer & { .font-size(11); }
+}
+
+h6 {
+	font-size: 1em;
+	font-weight: 500;
+	line-height: 1.3125em;
+	letter-spacing: 1px;
+}
+
+p, 
+ol, 
+ul, 
+dl, 
+address { 
+margin-bottom : .618em; 
+line-height : @baselineheight; }
+
+p.intro {
+	font-family: "brandon-grotesque";
+	font-size: 1.618em;
+	font-style: italic;
+	font-weight: 500;
+	margin-bottom: 1em;
+	line-height: 1.61853846154em;
+	clear: both;
+}
+
+p.first,
+p.outro {
+	font-weight: 500;
+	font-family: 'AvenirNextRoundedW01-Md 1075562';
+	font-size: 1.0588235294117647em;
+	margin-bottom: 1em;
+	clear: both;
+}
+
+p.author, time {
+	@clr: #666464;
+
+	font-family: "brandon-grotesque";
+	font-size: 0.86em;
+	font-style: normal;
+	font-weight: 400;
+	letter-spacing: 1px;
+	line-height: 2em;
+	margin-bottom: 1.618em;
+	color: @clr;	 
+}
+
+time { 
+	@clr: #666464;
+	&:before, &:after {
+		content: " — ";
+		color: lighten(@clr, 40%);
+	}
+}
+
+small { 
+	font-size: .5em;
+	margin-left: 1em
+}
+
+//Icons
+
+i { font-style: inherit; }
+ 
+// blockquote
+
+blockquote {
+	margin: 1em 0;
+	font-size: 2em;
+	text-align: center;
+	line-height: 1.5625em;
+	text-indent: 0.5em;
+	color: @baseheadingfontcolor;
+	font-family: @baseheadingfont;
+	font-style: italic;
+	font-weight: 400;
+	text-align: center;
+}
+
+q { 
+quotes : none; }
+
+blockquote:before, 
+blockquote:after, 
+q:before, 
+q:after {
+content : '';
+content : none; }
+
+cite {
+font-style : normal; } 
+
+// $W o r d    W r a p
+// --------------------------------------------------------------------------
+// Silent Sass Classes - A.K.A Placeholders
+//
+// normal: Indicates that lines may only break at normal word break points.
+// break-word : Indicates that normally unbreakable words may be broken at
+// arbitrary points if there are no otherwise acceptable break points in the line.
+
+.breakword {
+	word-wrap: break-word;
+}
+
+.normal-wrap {
+	word-wrap: normal;
+}
+
+.inherit-wrap {
+	word-wrap: auto;
+}
+
+// $C o d e b l o c k s
+// --------------------------------------------------------------------------
+
+.white-space (@wrap-space) when (@wrap-space = 'pre-wrap') {
+	white-space: "-moz-@{wrap-space}";	// Firefox 1.0-2.0
+	white-space: ~"@{wrap-space}"; 		// current browsers
+}
+.white-space (@wrap-space) when not (@wrap-space = 'pre-wrap') {
+	white-space: ~"@{wrap-space}";
+}
+
+pre code {
+	.normal-wrap;
+	.white-space("pre-wrap");
+}
+
+pre {
+	.white-space(pre);
+}
+
+code {
+	.white-space(pre);
+	font-family: monospace;
+}

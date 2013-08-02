@@ -1,0 +1,84 @@
+
+{% include head.html %}
+{% include nav.html %}
+{% include nav2.html %}
+
+<article class="post">
+    <header>
+        {% if page.imagen %}
+		<figure style="background-image: url({{ page.imagen }})">
+		<!-- 	<img src="{{ page.imagen }}" alt="{{ page.pie-de-imagen }}"> -->
+			<figcaption><h5>{{ page.pie-de-imagen }}</h5></figcaption>
+		</figure>
+
+		{% endif %}
+
+        {% if page.date %}
+		<time><span>{{ page.date | date_to_string }}</span></time>
+		{% endif %}
+    </header>
+
+    <div class="wrapper">
+        <section class="content">
+            <h1><a href="{{ page.url }}">{{ page.title }}</a></h1>
+
+            <h6 class="author">por {{ page.autor }}</h6>
+
+            {{ content }}
+
+			<div class="share">
+				<ul class="ss-share">
+					<li class="ss-share-item">
+						<a class="ss-share-link ico-facebook" href="http://www.facebook.com/sharer.php?u={{ page.url }}&amp;t={{ page.title }}" rel="nofollow" target="_blank"><h6>Compartir en Facebook</h6></a>
+					</li>
+					<li class="ss-share-item">
+						<a class="ss-share-link ico-twitter" href="http://twitter.com/share?text={{ page.title }}&amp;url={{ page.url }}via=marrissovva" rel="nofollow" target="_blank"><h6>Compartir en Twitter</h6></a>
+
+					</li>
+					<li class="ss-share-item">
+						<a class="ss-share-link ico-google" href="http://plus.google.com/share?url={{ page.url }}" rel="nofollow" target="_blank"><h6>Compartir en Google+</h6></a>
+					</li>
+				</ul>	
+			</div>
+
+            {% if page.comments %}
+				<div id="disqus_thread"></div>
+				<script type="text/javascript">
+					/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+					var disqus_shortname = 'marisamolero'; // required: replace example with your forum shortname
+
+					/* * * DON'T EDIT BELOW THIS LINE * * */
+					(function() {
+						var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+						dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+						(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+					})();
+			    </script>
+			    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+			    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+			    
+            {% endif %}
+<!-- 
+            <aside>
+                <nav class="share">
+                    <a id="share" href="javascript:void(0);"><i class="icon-share"></i>Compartir</a>
+                    <ul class="socialcount">
+                        <li class="facebook">
+                            <a id="share-twitter" target="_blank" href="https://twitter.com/intent/tweet?text=<perch:blog id="postURL" />" title="Compartir en Twitter"><i class="icon-twitter"></i></a>
+                        </li>
+                        <li class="twitter">
+                            <a id="share-facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<perch:blog id="postURL" />" title="Compartir en Facebook"><i class="icon-facebook"></i></a>
+                        </li>
+                       <li class="googleplus">
+                            <a id="share-google" target="_blank" href="https://plus.google.com/share?url=<perch:blog id="postURL" />" title="Compartir en Google Plus"><i class="icon-gplus"></i></a>
+                        </li>
+                    </ul>
+                </div>      
+            </aside>
+ -->            
+        </section>  
+    </div>        
+</article>
+
+
+{% include footer.html %}
