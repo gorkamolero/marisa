@@ -270,7 +270,6 @@ footer[role="contentinfo"] {
 
 .post {
 	margin-top: 1.618em;
-//	text-align: left;
 
 	header {
 		text-align: center;
@@ -302,29 +301,14 @@ footer[role="contentinfo"] {
 		margin: .618em 0;
 	}
 	figcaption {background: darken(@clr4, 15);}
+	time h6 { display: inline; }
+	h6 { .opacity(.8) }
 }
 
 .author {
 	.font-size(16);
 	position: relative;
 	top: -1em;
-}
-
-ul.post-list article.post {
-	margin: .618em 0;
-
-	&:not(:last-of-type) { border-bottom: 1px solid black; }
-
-	figure,
-	.author { display: none; }
-	.intro,
-	.first {	
-		font-size: 1.1em;
-		font-weight: normal; 
-		font-style: normal;
-		margin-bottom: 0;
-	}
-	h2 { margin-bottom: .382em;	}
 }
 
 

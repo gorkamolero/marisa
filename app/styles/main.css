@@ -1239,12 +1239,12 @@ img.mfp-img {
 figure {
   position: relative;
   margin: 0 auto 1.618em;
-  background: no-repeat fixed center bottom;
   min-height: 20em;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  background-attachment: fixed;
 }
 figure img {
   border-top: 2px solid #2d353e;
@@ -2215,31 +2215,20 @@ footer[role="contentinfo"] > h5 {
 .post figcaption {
   background: #5d3637;
 }
+.post time h6 {
+  display: inline;
+}
+.post h6 {
+  -webkit-opacity: 0.8;
+  -moz-opacity: 0.8;
+  opacity: 0.8;
+  filter: alpha(opacity=80);
+}
 .author {
   font-size: 16px;
   font-size: 1.6rem;
   position: relative;
   top: -1em;
-}
-ul.post-list article.post {
-  margin: .618em 0;
-}
-ul.post-list article.post:not(:last-of-type) {
-  border-bottom: 1px solid black;
-}
-ul.post-list article.post figure,
-ul.post-list article.post .author {
-  display: none;
-}
-ul.post-list article.post .intro,
-ul.post-list article.post .first {
-  font-size: 1.1em;
-  font-weight: normal;
-  font-style: normal;
-  margin-bottom: 0;
-}
-ul.post-list article.post h2 {
-  margin-bottom: .382em;
 }
 .more {
   display: none;
