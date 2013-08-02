@@ -1,0 +1,34 @@
+/* 	C O L O R  */
+
+a { 
+text-decoration : none;
+color : @linkcolor; 
+font-weight: bold;
+
+&:visited { 
+color : @linkcolorvisited;
+color : @linkcolor; }
+
+&:hover { 
+text-decoration : none;
+color : @linkcolorhover; }
+
+&:focus { 
+outline : thin dotted; 
+color : @linkcolorfocus; }
+
+&:hover, 
+&:active { 
+outline : 0; }
+}
+
+::-moz-selection { 
+background-color : lighten(@primarycolor, 65%); 
+color : @primarycolor; 
+text-shadow : none; }  
+	
+::selection { 
+background-color : lighten(@primarycolor, 65%); 
+color : @primarycolor; 
+text-shadow : none; }
+

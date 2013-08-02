@@ -1,0 +1,531 @@
+/* 	S T Y L E S  */
+
+main { margin: 0 auto; }
+
+// Secciones
+
+header[role="banner"] {
+	&.blog {
+		height: 5em !important;
+		min-height: 0;
+
+		.wrapper, .inner-wrapper {
+			min-height: 0;
+			.clearfix();
+		}
+		.wrapper {
+			height: 100%;
+			display: table;
+			width: 100%;
+		}
+		.inner-wrapper {
+			display: table-cell;
+			vertical-align: middle;
+		}
+		img, h1 { float: left; }
+		img {
+			width: 3.4em;
+			margin: -.4em 1em 0;
+		}
+		i { 
+			font-size: 1.4em;
+			margin: 0 1em;
+		}
+		a#header-toggle { float: right; }
+		.inner-wrapper {
+			padding: 0 !important;
+		}
+
+		@media screen and (max-width: 500px) {
+			min-height: 6em;
+			img { .hidden }
+			h1, a#header-toggle {
+				display: block;
+				float: none;
+				margin: 0 auto;
+			}
+			h1 { padding: .5em 0 0; }
+			a#header-toggle { margin-top: .6em; }
+		}
+	}
+	
+	img {
+		width: auto;
+		max-height: 40%;
+	}
+	
+	h1, h2, h5, h6, >a { color: @textcolor; }
+
+	h1 { margin-top: 0; }
+	
+	.clearfix(); 
+
+	i {
+		margin-left: .618em;
+		font-size: 1.1em;
+	}
+}
+
+nav[role="navigation"] {
+	@marg: .618em;
+
+	padding-top: @marg;
+	padding-bottom: @marg;
+
+	a { 
+		.h5; 
+		font-family: @baseheadingfont;
+		font-weight: 600;
+		margin: 0 .5em;	
+	}
+
+	li { .inline-block(); }
+}
+
+#consulta {
+
+	z-index: -1;
+	padding: 6.18em 0 3.618em;
+
+	>div { height: 100%; }
+
+	.wrapper {
+		padding: 0 0 1.618em;
+		max-width: 640px;
+	}	
+	.inner-wrapper { padding: 0 .618em; }
+	
+	h2 {
+		font-weight: 300;
+		margin-bottom: .618em;
+
+		span {
+			display: block;
+
+			&:first-of-type {
+				.font-size(51);
+				font-weight: 400;
+				margin-bottom: .1em;
+			}
+			&:last-of-type { .font-size(35); }
+		}
+	}
+
+	blockquote { 
+		font-size: 1.4em;
+		.opacity(.6);
+	}
+
+	a { display: block; }
+
+	aside {
+		clear: both;
+		margin: 1.618em auto 0;
+		font-weight: 300;
+		max-width: 300px;
+		a { display: inline; }
+		i { font-size: 4.618em; }
+	}
+
+	.text-wrap { margin-bottom: 2.618em; }
+	
+	.enormous {
+		.font-size(78);
+		font-weight: bold;
+	}
+	
+	@media screen and (min-width: 600px) {
+		overflow: hidden;
+		text-align: right;
+
+		h2 span {
+			&:first-of-type {
+				.font-size(72);
+				margin-bottom: .2em;
+			}
+			&:last-of-type { .font-size(54); }
+		}
+
+		blockquote {
+			text-align: right;
+			white-space: nowrap;
+		}
+
+		.text-wrap { margin: 2.618em 0 3em; }
+	}
+	@media screen and (min-width: 800px) { blockquote { margin-right: -3em; } }
+	
+}
+
+#carrera { 
+	background: white; 
+	aside { 
+		padding: 1.618em .618em .618em;
+		.inline-block;
+		a { display: block; }
+		&:hover { 
+			background: fadeout(lighten(@clr5,40),25); 
+			.transition(background-color 1s ease);
+		}
+	}
+	i { font-size: 2.618em }
+	.enormous { .font-size(96); }
+}
+
+
+#contacto {
+	@textcolor: rgb(255, 245, 211);
+	@textcolor2: lighten(@textcolor, 4);
+
+	h2, h4, a, i { color: @textcolor; }
+
+	.inner-wrapper {
+		min-height: 50%;
+		padding: 2.618em 0;
+		.transition(background-color 1s ease);
+		.clearfix();
+		
+		&:hover {
+			h2 { color: @textcolor2; }
+			background: fadeout(@clr4,40);
+		}
+	}
+
+	a { 
+		display: block;
+		text-align: left;
+		width: 80%;
+		min-width: 260px;
+		margin: 0 auto 1em; 
+		&:hover, &:visited { text-decoration: none; }
+		&:hover {
+			color: @textcolor2;
+			h4, a, i { color: @textcolor2; }
+		}
+	}
+
+	i {
+		display: inline;
+		font-size: 2em;
+	}
+
+	i, h4 { 
+		display: inline; 
+		vertical-align: middle;
+	}
+
+	h4 { padding-left: 1em; }
+
+	@media screen and (min-width: 780px) {
+		min-height: 60%;
+
+		h2 { margin-bottom: 0; }
+
+		a { 
+			text-align: center;
+			.column(1);
+			min-width: auto;
+			padding-bottom: .618em;
+		}
+
+		i {
+			margin: .382em auto .2em;
+			font-size: 2.618em;
+		}
+		a, i { display: block; }
+	}
+	@media screen and (max-width: 480px) { a { font-size: 1em } }
+	@media screen and (min-width: 481px) { background-image: url('../images/background/marisahigh.jpg'); } 
+}
+
+footer[role="contentinfo"] {
+	border-top: 1px solid @primarycolor;
+	clear: both;
+	margin: 0 0 .618em;
+	padding-top: .618em;
+
+	img {
+		display: block;
+		margin: .618em auto 0;
+		max-width: 200px;
+	}
+
+	> h5 {
+		padding: .618em;
+		border-bottom: 1px solid rgb(0, 0, 0);
+		.inline-block();
+	}
+}
+#footer-nav {
+	margin-top: .382em;
+	border-bottom: 1px solid @clr2;
+	.inline-block();
+
+	li { display: inline; }
+	a { margin: 0 .2em; }
+}
+.links { padding: .618em; }
+
+/*	POST  DESIGN: 	*/
+
+.post {
+	margin-top: 1.618em;
+
+	header {
+		text-align: center;
+	}
+
+	> .wrapper {
+		max-width: 780px;
+		margin: 0 auto;
+	}
+
+	.content {  
+		.box-sizing;
+		padding: 0 .618em;
+	}
+	
+	aside > a {
+		.clearfix;
+		&:first-child { float: left; }
+		&:last-child { float: right; }
+	}
+
+	h1 { color: darken(@clr3,25); }
+	p:first-of-type,
+	p.intro {
+		color: darken(@clr4,25);
+		font-family: @baseheadingfont;
+		font-weight: 500;
+		font-size: 1.2em;
+		margin: .618em 0;
+	}
+	figcaption {background: darken(@clr4, 15);}
+	time h6 { display: inline; }
+	h6 { .opacity(.8) }
+}
+
+.author {
+	.font-size(16);
+	position: relative;
+	top: -1em;
+}
+
+
+
+.more { display: none; }
+
+
+
+@media screen and (min-width: 600px) {
+//	main > section { padding: 0; }
+	.inner-wrapper,
+	.inner-inner,
+	.post-list {
+		min-width: 600px;
+		max-width: 640px;
+		margin: 0 auto;
+	}
+
+	#consulta  {
+		article:nth-of-type(odd),
+		article:nth-of-type(even) { 
+				.column(1);
+				margin-top: 1.618em;	
+				margin-bottom: 1.618em;				
+		}
+		aside { max-width: 60%; }
+	}
+
+	#contacto { 
+	display: table;
+	width: 100%; }
+}
+
+
+@media screen and (min-width: 690px) {	
+	#carrera {
+		padding: 3.618em 0;
+		background: white url('../img/bg/amarillos.png') no-repeat center 1.95em;
+		h2 { margin: 1.618em 0 2.618em; }
+	}
+
+	#contacto { 
+		padding: 1.618em 0 2.618em; 
+		.inner-wrapper { padding-top: 2.618em; }
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	body { 
+		.font-size(20);
+		.background-size(contain);
+	}
+
+	.inner-wrapper,
+	.inner-inner {
+		max-width: 768px;
+		margin: 0 auto;
+		header[role="banner"] & { padding-top: 3.618em; }
+	}
+
+	#carrera {	
+		background-image: url('../img/bg/amarillo.png');
+		background-position-y: 2.6em; }
+}
+
+
+/*
+	Homeopatia & Fitoterapia
+*/
+
+.mfp-content { height: 100%; }
+
+#homeopatia,
+#fitoterapia {
+	text-align: center;
+	
+	img { max-width: 100% }
+	h3 { margin-top: 1.618em; }
+
+	p { font-weight: 700; }
+
+	img {
+		height: 300px;
+		.rounded(16em);
+		border: 5px solid;
+	}
+
+	span { 
+		display: block;
+		clear: both;
+		font-size: .8em;
+		margin-bottom: 1.618em;
+	}
+
+	.wrapper { padding: 1.618em 0; }
+	.bg { height: 100%; }
+}
+
+#homeopatia {
+	@textcolor: rgb(255, 245, 211);
+	h1, h2, h3, h4, h5, h6, p, span, a, i, blockquote { color: @textcolor; }
+	img { border-color: @textcolor; }
+}
+
+#fitoterapia {
+	height: 100%;
+	@textcolor: fadeout(black,20);
+	@textcolor: white;
+	h1, h2, h3, h4, h5, h6, p, span, a, i, blockquote { color: @textcolor; }
+	img { border-color: fadeout(@textcolor,25); }
+	+ button:hover { color: lighten(@textcolor, 5); }
+}
+
+
+/* BG STUFF */
+
+header[role="banner"] {
+	background: url('../images/background/header2low.jpg') no-repeat center top;
+	@media screen and (min-width: 600px) { background-image: url('../images/background/header2mid.jpg'); }
+	@media screen and (min-width: 1025px) {background-image: url('../images/background/header2high.jpg'); }
+	>div {
+		@bgcolor: fadeout(@clr3,20);
+		@darkenedbgcolor: darken(@bgcolor, 5);
+		background: fadeout(@darkenedbgcolor,0);
+	}
+	h1, a, a:visited, h5, h6, i { color: white; }
+}
+
+#intro {
+	background: url('../images/background/intro2low.jpg') no-repeat center center;
+	.background-size(cover);
+	text-align: left;
+
+	.wrapper {
+		padding: 2.618em 0;
+		min-height: 100%;
+		height: auto;
+	}
+
+	.inner-wrapper {
+		padding: 0 .618em;
+	}
+
+	p { max-width: 580px; }
+
+	h2 {
+		font-weight: 300;
+		span {
+			display: block;
+			.font-size(51);
+			&:first-of-type {
+				margin-bottom: 0.2em;
+				font-weight: bold;
+			}
+		}
+	}
+
+	>div {
+		.clearfix;
+		background: fadeout(white, 20);
+		width: 100%;
+		height: 100%;
+	}
+
+	&.dark {
+		> div { background: fadeout(darken(@clr4,10), 50); }
+		@color1: rgb(253, 221, 120);
+		@color: lighten(@color1, 15);
+		h2 { color: @color; }
+		p { color: lighten(@color,10); }
+	}	
+	@media screen and (min-width: 600px) {
+		background-image: url('../images/background/intro2mid.jpg');
+		h2 span {
+			&:first-of-type { margin-bottom: 0.3em; }
+			&:last-of-type { .font-size(70); }
+		}
+	}
+	@media screen and (min-width: 1025px) {
+		background-image: url('../images/background/intro2high.jpg');
+		background-attachment: fixed;
+	}
+}
+
+#contacto {
+	background: url('../images/background/marisalow.jpg') no-repeat top center;
+	@media screen and (min-width: 600px) { background-image: url('../images/background/marisamid.jpg'); }
+	@media screen and (min-width: 1025px) { background-image: url('../images/background/marisahigh.jpg'); }
+}
+
+#fitoterapia {
+	background: url('../images/background/fitolow.jpg') no-repeat top center;
+	.background-size(cover);
+	@media screen and (min-width: 600px) { background-image: url('../images/background/fitomid.jpg'); }
+	@media screen and (min-width: 1025px) { background-image: url('../images/background/fitohigh.jpg'); }
+
+	> div.bg { background-color: fadeout(#A5B692, 20); }
+}
+
+#homeopatia {
+	background: url('../images/background/homeolow.jpg') no-repeat center center;
+	.background-size(cover);
+	@media screen and (min-width: 600px) { background-image: url('../images/background/homeomid.jpg'); }
+	@media screen and (min-width: 1025px) { background-image: url('../images/background/homeohigh.jpg'); }
+
+	> div.bg { background-color: fadeout(black, 40); }
+}
+
+
+header[role="banner"],
+#intro,
+#contacto,
+#fitoterapia,
+#homeopatia {
+	.background-size(cover);
+	@media screen and (min-width: 1025px) { background-attachment: fixed; }
+}
+
+
+#consulta { background: url('../images/noise2.jpg') repeat; }

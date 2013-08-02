@@ -1,0 +1,81 @@
+/* 	S I T E - W I D E   S T Y L E S   */
+
+html {
+font-size : 62.5%;
+-webkit-overflow-scrolling : touch; 
+-webkit-tap-highlight-color : lighten(@primarycolor, 75%); 
+-webkit-text-size-adjust : 100%; 
+-ms-text-size-adjust : 100%; }
+
+body { 
+margin : 0;
+padding : 0;
+width : 100%;
+background-color : transparent;
+font-family : @basefont;
+.font-size();
+line-height : @baselineheight;
+color : @textcolor;
+text-align: center; 
+.clearfix();
+
+	&.noscroll { overflow: hidden; }
+
+	&.blog { 
+		background: white url('../img/bg/paper.png') repeat; 
+		footer[role="contentinfo"] { 
+			border-color: gainsboro; 
+			margin-top: 2.618em;
+		}
+		#footer-nav { border-color: whitesmoke; }
+	}
+}
+
+
+
+/*	Full Screen Layout 	*/
+html,
+body,
+main {
+	position: relative;
+	height: 100%;
+}
+
+header[role="banner"],
+#intro {
+	height: 100%;
+	width: 100%;
+	.box-sizing();
+
+	.wrapper,
+	.inner-wrapper { .box-sizing(); }
+
+	@media screen and (max-height: 480px) {
+		height: auto;
+		min-height: 320px;
+		.wrapper, .inner-wrapper {
+			min-height: 320px;
+		}
+	}
+	
+	@media screen and (min-height: 480px) {
+		.wrapper {
+			display: table;
+			width: 100%;
+			height: 100%;
+		}
+		.inner-wrapper {
+			width: 100%;
+			min-height: 100%;
+			display: table-cell;
+			vertical-align: middle;
+		}
+	}
+}
+
+
+
+
+
+
+

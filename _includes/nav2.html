@@ -1,0 +1,14 @@
+<nav id="sticky-nav" {% if page.title == "Blog" or page.layout == "post" %} class="blog" {% endif %}>
+    <a href="javascript:void(0);" id="nav-toggle">
+        <h3>
+        	{% unless page.title == "Marisa Molero" %}
+        		Blog
+        	{% else %}
+        		Marisa Molero
+        	{% endunless %}
+
+        </h3>
+        <i class="icon-menu"></i>
+        <i class="icon-close"></i>
+    </a>
+</nav>
